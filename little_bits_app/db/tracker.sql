@@ -5,7 +5,7 @@ DROP TABLE IF EXISTS tags;
 
 CREATE TABLE tags(
   id SERIAL4 PRIMARY KEY,
-  tag VARCHAR(255)
+  tag_type VARCHAR(255)
 );
 
 CREATE TABLE merchants(
