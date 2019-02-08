@@ -1,6 +1,6 @@
-require_relative('./models/merchant')
-require_relative('./models/tag')
-require_relative('./models/transaction')
+require_relative('../models/merchant')
+require_relative('../models/tag')
+require_relative('../models/transaction')
 require('pry')
 
 
@@ -24,3 +24,6 @@ tag_1.save
 tag_2.save
 tag_3.save
 tag_4.save
+
+binding.pry
+nil
