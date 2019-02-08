@@ -26,5 +26,26 @@ tag_2.save
 tag_3.save
 tag_4.save
 
+merchant_1.Merchant.new({
+  'name' => 'Tesco'
+  })
+
+merchant_2.Merchant.new({
+  'name' => 'Lothian Buses'
+  })
+
+merchant_3.Merchant.new({
+  'name' => 'Cineworld'
+  })
+
+merchant_4.Merchant.new({
+  'name' => 'BT'
+  })
+
+merchant_1.save
+merchant_2.save
+merchant_3.save
+merchant_4.save
+
 binding.pry
 nil
