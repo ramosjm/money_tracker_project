@@ -17,5 +17,10 @@ attr_reader :id
 
   end
 
+  def self.all()
+    sql = "SELECT * FROM tags"
+    tags = SqlRunner.run(sql)
+    return tags.map { |tag|Tag.new(tag)  }
+  end
 
 end
