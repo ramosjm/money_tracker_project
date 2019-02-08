@@ -14,7 +14,12 @@ attr_reader :id
     values = [@tag_type]
     result = SqlRunner.run(sql,values)
     @id = result.first['id'].to_i
+  end
 
+  def delete()
+    sql = "DELETE FROM tags WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql,values)
   end
 
   def self.all()
