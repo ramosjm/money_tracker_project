@@ -6,6 +6,7 @@ class TagTest < MiniTest::Test
 
   def setup()
     @tag_1 = Tag.new({
+      'id' =>'3',
       'tag_type' => 'groceries'
       })
   end
@@ -16,6 +17,10 @@ class TagTest < MiniTest::Test
 
   def test_get_tag_type()
     assert_equal('groceries',@tag_1.tag_type)
+  end
+
+  def test_get_tag_id()
+    assert_equal(3,@tag_1.id)
   end
 
 end
