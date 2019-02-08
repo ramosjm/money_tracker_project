@@ -14,4 +14,8 @@ class TagTest < MiniTest::Test
     assert_equal(Tag,@tag_1.class)
   end
 
+  def test_get_tag_type()
+    assert_equal('groceries',@tag_1.tag_type)
+  end
+
 end
