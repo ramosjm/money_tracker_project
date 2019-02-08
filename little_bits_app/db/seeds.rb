@@ -26,19 +26,19 @@ tag_2.save
 tag_3.save
 tag_4.save
 
-merchant_1.Merchant.new({
+merchant_1 = Merchant.new({
   'name' => 'Tesco'
   })
 
-merchant_2.Merchant.new({
+merchant_2 = Merchant.new({
   'name' => 'Lothian Buses'
   })
 
-merchant_3.Merchant.new({
+merchant_3 = Merchant.new({
   'name' => 'Cineworld'
   })
 
-merchant_4.Merchant.new({
+merchant_4 = Merchant.new({
   'name' => 'BT'
   })
 
