@@ -19,4 +19,8 @@ class MerchantTest < MiniTest::Test
     assert_equal(1,@merchant_1.id)
   end
 
+  def test_get_merchant_name()
+    assert_equal('Tesco',@merchant_1.name)
+  end
+
 end
