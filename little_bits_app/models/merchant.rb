@@ -15,4 +15,14 @@ attr_reader :id
     @id = merchant['id'].to_i
   end
 
+  def self.all()
+    sql = "SELECT * FROM merchants"
+    merchants = SqlRunner.run(sql)
+    result = merchants.map { |merchant|Merchant.new(merchant) }
+    return result
+  end
+
+
+
+  
 end
