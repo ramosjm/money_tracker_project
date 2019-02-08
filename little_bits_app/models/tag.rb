@@ -22,5 +22,8 @@ attr_reader :id
     tags = SqlRunner.run(sql)
     return tags.map { |tag|Tag.new(tag)  }
   end
-
+  def self.delete_all()
+    sql = "DELETE FROM tags"
+    SqlRunner.run(sql)
+  end
 end
