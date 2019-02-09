@@ -41,7 +41,7 @@ attr_reader :id
     return Transaction.new(result)
   end
 
-  def self.total()
+  def self.total() #tested in PRY
     total = 0.00
     transactions = Transaction.all()
     transactions.each { |transaction| total += transaction.amount }

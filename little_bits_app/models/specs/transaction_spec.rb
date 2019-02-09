@@ -33,4 +33,5 @@ class TransactionTest < MiniTest::Test
     assert_equal(3,@transaction_1.merchant_id)
   end
 
+
 end
