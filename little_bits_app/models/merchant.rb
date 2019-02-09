@@ -15,6 +15,7 @@ attr_reader :id
     @id = merchant['id'].to_i
   end
 
+
   def delete()
     sql = "DELETE FROM merchants WHERE id = $1"
     values = [@id]
