@@ -3,6 +3,6 @@
 <% @transactions.each do |transaction| %>
   <p>Transaction: £<%= transaction.amount() %> <%= transaction.merchant.name %> </p>
   <p> <%= transaction.tag.tag_type%></p>
-  <p><a href="/transaction/<%= transaction.id %>/edit">Edit Transaction</a></p>
+  <p><a href="/transactions/<%= transaction.id %>/edit">Edit Transaction</a></p>
   <hr />
 <% end %>

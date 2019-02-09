@@ -9,8 +9,8 @@ get '/transactions/:id' do
   erb(:show)
 end
 
-get '/transactions/new' do
-  erb(:new)
+get '/transactions/new/' do
+  erb(:"transaction/new")
 end
 
 post '/transactions/' do
