@@ -1,6 +1,6 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
-require_relative('controllers/merchants_controller')
+require_relative('../models/tag.rb')
 
 get '/tags/' do
   erb(:index)
