@@ -15,4 +15,9 @@ attr_reader :id
     values = [@amount,@tag_id, @merchant_id]
     SqlRunner.run(sql,values)
   end
+
+  def self.delete_all()
+    sql = "DELETE FROM transactions"
+    SqlRunner.run(sql)
+  end
 end
