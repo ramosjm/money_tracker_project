@@ -48,5 +48,27 @@ merchant_2.save
 merchant_3.save
 merchant_4.save
 
+transaction_1 = ({
+  'amount' => 12.50,
+  'tag_id' => tag_1.id,
+  'merchant_id' => merchant_1.id
+  })
+
+transaction_2 = ({
+  'amount' => 57.00,
+  'tag_id' => tag_2.id,
+  'merchant_id' => merchant_2.id
+  })
+transaction_3 = ({
+  'amount' => 17.50,
+  'tag_id' => tag_3.id,
+  'merchant_id' => merchant_3.id
+  })
+transaction_4 = ({
+  'amount' => 45.33,
+  'tag_id' => tag_4.id,
+  'merchant_id' => merchant_4.id
+  })
+
 binding.pry
 nil
