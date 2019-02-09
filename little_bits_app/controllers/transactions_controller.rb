@@ -1,36 +1,34 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require_relative('../models/transaction.rb')
+require_relative('../models/tag.rb')
+require_relative('../models/merchant.rb')
+also_reload('../models/*')
 
-get '/' do
-  @transactions = Transaction.all()
-  erb(:index)
-end
-
-get '/tags/:id' do
+get '/transactions/:id' do
   erb(:show)
 end
 
-get '/tags/new' do
+get '/transactions/new' do
   erb(:new)
 end
 
-post '/tags' do
+post '/transactions/' do
   #save merchant here
   erb(:create)
 end
 
-get '/tags/:id/edit' do
-  #use find method
-  erb(:edit)
+get '/transactions/:id/edit' do
+  @transaction = Transaction.find(params[:id])
+  erb(:"transaction/edit")
 end
 
-post '/tags/:id' do
+post '/transactions/:id' do
   #use update method
-  redirect to '/tags/'
+  redirect to '/'
 end
 
-post '/tags/:id/delete' do
+post '/transactions/:id/delete' do
   # use find(id) and .Delete
-  redirect to '/tags/'
+  redirect to '/'
 end
