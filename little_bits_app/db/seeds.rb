@@ -77,8 +77,10 @@ transaction_2.save
 transaction_3.save
 transaction_4.save
 
-merchant_1.name = 'Asda'
+merchant_1.name = 'asda'
 merchant_1.update
+tag_2.tag_type= 'travel'
+tag_2.update
 
 binding.pry
 nil

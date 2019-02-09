@@ -16,6 +16,12 @@ attr_reader :id
     @id = result.first['id'].to_i
   end
 
+  def update()
+    sql = "UPDATE tags SET tag_type = $1 WHERE id =$2"
+    values = [@tag_type,@id]
+    SqlRunner.run(sql,values)
+  end
+
   def delete()
     sql = "DELETE FROM tags WHERE id = $1"
     values = [@id]
