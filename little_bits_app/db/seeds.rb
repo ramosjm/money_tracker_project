@@ -70,5 +70,10 @@ transaction_4 = ({
   'merchant_id' => merchant_4.id
   })
 
+transaction_1.save
+transaction_2.save
+transaction_3.save
+transaction_4.save
+
 binding.pry
 nil
