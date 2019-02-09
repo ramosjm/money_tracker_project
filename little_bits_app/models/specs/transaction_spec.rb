@@ -17,4 +17,8 @@ class TransactionTest < MiniTest::Test
     assert_equal(Transaction,@transaction_1.class)
   end
 
+  def test_can_get_amount()
+    assert_equal(12.50,@transaction_1.amount)
+  end
+
 end
