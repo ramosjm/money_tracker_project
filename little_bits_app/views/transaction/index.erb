@@ -1,1 +1,7 @@
-<h1>Transactions go here. - This should be the homepage</h1>
+<h1>All Transactions:</h1>
+
+<% @transactions.each do |transaction| %>
+  <p>Transaction: £<%= transaction.amount() %> <%= transaction.merchant_id %>  <%= transaction.tag_id %></p>
+  <p><a href="/tags/<%= transaction.id %>/edit">Edit Transaction</a></p>
+  <hr />
+<% end %>
