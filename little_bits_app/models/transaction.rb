@@ -1,3 +1,5 @@
+require_relative('../db/sql_runner.rb')
+
 class Transaction
 
 attr_accessor :amount, :tag_id, :merchant_id

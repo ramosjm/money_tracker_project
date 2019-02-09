@@ -1,5 +1,6 @@
 require('minitest/autorun')
 require('minitest/rg')
+require_relative('../../db/sql_runner.rb')
 require_relative('../transaction.rb')
 
 class TransactionTest < MiniTest::Test
@@ -31,6 +32,10 @@ class TransactionTest < MiniTest::Test
 
   def test_get_merchant_id()
     assert_equal(3,@transaction_1.merchant_id)
+  end
+
+  def test_total()
+    assert_equal(449.38,Transaction.total)
   end
 
 

@@ -1,3 +1,5 @@
+require_relative('../db/sql_runner.rb')
+
 class Merchant
 
 attr_accessor :name
