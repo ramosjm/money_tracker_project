@@ -27,5 +27,19 @@ attr_reader :id
     SqlRunner.run(sql)
   end
 
+  def self.all()
+    sql = "SELECT * FROM transactions"
+    transactions = SqlRunner.run(sql)
+    result = transactions.map{|transaction|Transaction.new(transaction)}
+    return result
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM transactions WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql,values).first
+    return Transaction.new(result)
+  end
+
 
 end
