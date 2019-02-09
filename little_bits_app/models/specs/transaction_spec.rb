@@ -21,4 +21,8 @@ class TransactionTest < MiniTest::Test
     assert_equal(12.50,@transaction_1.amount)
   end
 
+  def test_can_get_tag_id()
+    assert_equal(1,@transaction_1.id)
+  end
+
 end
