@@ -16,6 +16,12 @@ attr_reader :id
     @id = SqlRunner.run(sql,values).first['id']
   end
 
+  def update()
+    sql = "UPDATE transactions SET (amount, tag_id, merchant_id) = ($1,$2,$3) WHERE id =$4"
+    values = [@amount,@tag_id,@merchant_id,@id]
+    SqlRunner.run(sql,values)
+  end
+
   def delete()
     sql = "DELETE FROM transactions WHERE id = $1"
     values = [@id]

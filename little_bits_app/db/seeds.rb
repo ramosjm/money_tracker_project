@@ -81,6 +81,8 @@ merchant_1.name = 'asda'
 merchant_1.update
 tag_2.tag_type= 'travel'
 tag_2.update
+transaction_3.amount = 334.55
+transaction_3.update
 
 binding.pry
 nil
