@@ -1,7 +1,9 @@
 <h1>All Merchants:</h1>
 
 <% @merchants.each do |merchant| %>
-  <p><%= merchant.name() %> </p>
-  <p><a href="/merchants/<%= merchant.id %>/edit">Edit Merchant</a></p>
+  <p><%= merchant.name().capitalize %> </p>
+  <form method="get" action="/merchants/<%=merchant.id%>/edit">
+    <input type="submit" value="Edit Merchant">
+  </form>
   <hr />
 <% end %>
