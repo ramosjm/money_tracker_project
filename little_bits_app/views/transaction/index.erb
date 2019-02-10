@@ -1,5 +1,4 @@
 <h1>All Transactions:</h1>
-
 <h2>Total Spent: £<%=@total%></h2>
 <% @transactions.each do |transaction| %>
   <p>Transaction: £<%= transaction.amount() %> <%= transaction.merchant.name %> </p>
