@@ -23,12 +23,12 @@ post '/tags/new' do
 end
 
 get '/tags/:id/edit' do
-  #use find method
-  erb(:edit)
+  @tag = Tag.find(params[:id])
+  erb(:"tag/edit")
 end
 
 post '/tags/:id' do
-  #use update method
+  Tag.new(params).update
   redirect to '/tags/'
 end
 
