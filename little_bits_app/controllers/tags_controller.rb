@@ -12,7 +12,7 @@ get '/tags/:id' do
   erb(:"tag/show")
 end
 
-get '/tags/new' do
+get '/tags/new/' do
   erb(:"tag/new")
 end
 
