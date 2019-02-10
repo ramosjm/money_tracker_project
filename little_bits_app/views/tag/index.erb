@@ -1,0 +1,7 @@
+<h1>All Tags:</h1>
+
+<% @tags.each do |tag| %>
+  <p><%= tag.tag_type() %> </p>
+  <p><a href="/tags/<%= tag.id %>/edit">Edit Tag</a></p>
+  <hr />
+<% end %>

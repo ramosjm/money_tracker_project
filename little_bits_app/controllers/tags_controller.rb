@@ -3,20 +3,21 @@ require( 'sinatra/contrib/all' )
 require_relative('../models/tag.rb')
 
 get '/tags/' do
-  erb(:index)
+  @tags = Tag.all
+  erb(:"tag/index")
 end
 
 get '/tags/:id' do
-  erb(:show)
+  erb(:"tag/show")
 end
 
 get '/tags/new' do
-  erb(:new)
+  erb(:"tag/new")
 end
 
 post '/tags' do
   #save merchant here
-  erb(:create)
+  erb(:"tag/create")
 end
 
 get '/tags/:id/edit' do
