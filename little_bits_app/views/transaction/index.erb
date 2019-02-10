@@ -1,8 +1,16 @@
 <h1>All Transactions:</h1>
 <h2>Total Spent: £<%=@total%></h2>
 <% @transactions.each do |transaction| %>
-  <p>Transaction: £<%= transaction.amount() %> <%= transaction.merchant.name %> </p>
-  <p> <%= transaction.tag.tag_type%></p>
-  <p><a href="/transactions/<%= transaction.id %>/edit">Edit Transaction</a></p>
+  <p>Transaction:</p>
+  <p>£<%= transaction.amount() %> <%= transaction.merchant.name.capitalize %> </p>
+  <p> <%= transaction.tag.tag_type.capitalize%></p>
+  <p>
+    <form method="get" action="transactions/<%=transaction.id%>/edit">
+      <input type="submit" value="Edit Transaction"/>
+    </form>
+    <form method="post" action="transactions/<%=transaction.id%>/delete">
+      <input type="submit" value="Delete Transaction"/>
+    </form>
+  </p>
   <hr />
 <% end %>

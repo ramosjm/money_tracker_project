@@ -34,7 +34,8 @@ post '/transactions/:id/edit' do
   redirect to '/'
 end
 
-post '/transactions/:id/delete/' do
-  # use find(id) and .Delete
+post '/transactions/:id/delete' do
+  transaction = Transaction.find(params[:id])
+  transaction.delete
   redirect to '/'
 end

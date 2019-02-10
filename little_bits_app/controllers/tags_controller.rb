@@ -33,6 +33,7 @@ post '/tags/:id' do
 end
 
 post '/tags/:id/delete' do
-  # use find(id) and .Delete
+  tag = Tag.find(params[:id])
+  tag.delete
   redirect to '/tags/'
 end
