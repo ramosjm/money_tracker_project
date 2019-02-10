@@ -22,13 +22,13 @@ post '/merchants/new' do
   erb(:"merchant/create")
 end
 
-get '/merchants/:id/edit/' do
-  #use find method
-  erb(:edit)
+get '/merchants/:id/edit' do
+  @merchant = Merchant.find(params[:id])
+  erb(:"merchant/edit")
 end
 
-post '/merchants/:id/' do
-  #use update method
+post '/merchants/:id' do
+  Merchant.new(params).update
   redirect to '/merchants/'
 end
 
