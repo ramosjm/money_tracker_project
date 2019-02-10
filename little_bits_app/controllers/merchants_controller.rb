@@ -33,6 +33,7 @@ post '/merchants/:id' do
 end
 
 post '/merchants/:id/delete/' do
-  # use find(id) and .Delete
+  merchant = Merchant.find(params[:id])
+  merchant.delete()
   redirect to '/merchants/'
 end
