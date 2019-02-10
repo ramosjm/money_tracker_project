@@ -22,13 +22,15 @@ post '/transactions/new/' do
   redirect to '/'
 end
 
-get '/transactions/:id/edit/' do
+get '/transactions/:id/edit' do
   @transaction = Transaction.find(params[:id])
+  @merchants = Merchant.all
+  @tags = Tag.all
   erb(:"transaction/edit")
 end
 
-post '/transactions/:id/' do
-  #use update method
+post '/transactions/:id/edit' do
+  Transaction.new(params).update
   redirect to '/'
 end
 
