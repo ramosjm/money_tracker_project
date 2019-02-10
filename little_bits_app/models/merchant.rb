@@ -10,6 +10,7 @@ attr_reader :id
     @name = merchant['name']
   end
 
+
   def save()
     sql = "INSERT INTO merchants (name) VALUES ($1) RETURNING id"
     values = [@name]

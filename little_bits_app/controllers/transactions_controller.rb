@@ -16,7 +16,7 @@ end
 post '/transactions/new/' do
   @transaction = Transaction.new(params)
   @transaction.save
-  erb(:create)
+  erb(:"transaction/create")
 end
 
 get '/transactions/:id/edit' do
