@@ -1,12 +1,17 @@
 <form method="post" action="/transactions/new/">
   <label for="merchant-name">Merchant:</label>
-  <input type="text" name="merchant" id="merchant-field"/>
-
+  <select name="merchant_id" id="merchant-select">
+    <% @merchants.each do |merchant| %>
+        <option value=<%= merchant.id %>><%= merchant.name.capitalize %></option>
+    <% end %>
+  </select>
   <label for="amount-field">Amount:</label>
   <input type="text" name="amount" id="amount-field"/>
-
   <label for="tag-field">Tag:</label>
-  <input type="text" name="tag_type" id="tag-field"/>
-
+  <select name="tag_id" id="tag_select">
+    <% @tags.each do |tag| %>
+        <option value=<%= tag.id %>><%= tag.tag_type.capitalize %></option>
+    <% end %>
+  </select>
   <input type='submit' value="Add Transaction">
 </form>

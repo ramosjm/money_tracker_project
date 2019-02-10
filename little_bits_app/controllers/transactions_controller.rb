@@ -10,6 +10,8 @@ get '/transactions/:id' do
 end
 
 get '/transactions/new/' do
+  @merchants = Merchant.all
+  @tags = Tag.all
   erb(:"transaction/new")
 end
 
@@ -17,6 +19,7 @@ post '/transactions/new/' do
   @transaction = Transaction.new(params)
   @transaction.save
   erb(:"transaction/create")
+  redirect to '/'
 end
 
 get '/transactions/:id/edit/' do
