@@ -30,19 +30,19 @@ tag_3.save
 tag_4.save
 
 merchant_1 = Merchant.new({
-  'name' => 'Tesco'
+  'name' => 'tesco'
   })
 
 merchant_2 = Merchant.new({
-  'name' => 'Lothian Buses'
+  'name' => 'lothian buses'
   })
 
 merchant_3 = Merchant.new({
-  'name' => 'Cineworld'
+  'name' => 'cineworld'
   })
 
 merchant_4 = Merchant.new({
-  'name' => 'BT'
+  'name' => 'virgin'
   })
 
 merchant_1.save

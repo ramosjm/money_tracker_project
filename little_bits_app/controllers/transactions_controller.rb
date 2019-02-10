@@ -13,8 +13,9 @@ get '/transactions/new/' do
   erb(:"transaction/new")
 end
 
-post '/transactions/' do
-  #save merchant here
+post '/transactions/new/' do
+  @transaction = Transaction.new(params)
+  @transaction.save
   erb(:create)
 end
 
