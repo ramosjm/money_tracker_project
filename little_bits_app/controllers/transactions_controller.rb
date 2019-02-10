@@ -19,17 +19,17 @@ post '/transactions/new/' do
   erb(:"transaction/create")
 end
 
-get '/transactions/:id/edit' do
+get '/transactions/:id/edit/' do
   @transaction = Transaction.find(params[:id])
   erb(:"transaction/edit")
 end
 
-post '/transactions/:id' do
+post '/transactions/:id/' do
   #use update method
   redirect to '/'
 end
 
-post '/transactions/:id/delete' do
+post '/transactions/:id/delete/' do
   # use find(id) and .Delete
   redirect to '/'
 end

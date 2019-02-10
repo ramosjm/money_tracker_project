@@ -8,7 +8,7 @@ get '/merchants/' do
   erb(:"merchant/index")
 end
 
-get '/merchants/:id' do
+get '/merchants/:id/' do
   erb(:"merchant/show")
 end
 
@@ -16,23 +16,23 @@ get '/merchants/new' do
   erb(:"merchant/new")
 end
 
-post '/merchants/' do
+post '/merchants/new' do
   @merchant = Merchant.new(params)
   @merchant.save
   erb(:"merchant/create")
 end
 
-get '/merchants/:id/edit' do
+get '/merchants/:id/edit/' do
   #use find method
   erb(:edit)
 end
 
-post '/merchants/:id' do
+post '/merchants/:id/' do
   #use update method
   redirect to '/merchants/'
 end
 
-post '/merchants/:id/delete' do
+post '/merchants/:id/delete/' do
   # use find(id) and .Delete
   redirect to '/merchants/'
 end
