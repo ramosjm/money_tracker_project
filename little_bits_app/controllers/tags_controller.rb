@@ -1,6 +1,7 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require_relative('../models/tag.rb')
+also_reload('../models/*')
 
 get '/tags/' do
   @tags = Tag.all
@@ -15,8 +16,9 @@ get '/tags/new' do
   erb(:"tag/new")
 end
 
-post '/tags' do
-  #save merchant here
+post '/tags/new' do
+  @tag = Tag.new(params)
+  @tag.save
   erb(:"tag/create")
 end
 
