@@ -1,6 +1,7 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require_relative('../models/tag.rb')
+require_relative('../models/transaction.rb')
 also_reload('../models/*')
 
 
@@ -39,4 +40,9 @@ post '/tags/:id/delete' do
   tag = Tag.find(params[:id])
   tag.delete
   redirect to '/tags/'
+end
+post '/tags/:id/transactions/:trans_id/delete' do
+  transaction = Transaction.find(params[:"trans_id"])
+  transaction.delete
+
 end
