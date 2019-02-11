@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner.rb')
+require_relative('./transaction.rb')
 
 class Tag
 attr_accessor :tag_type
@@ -7,6 +8,14 @@ attr_reader :id
   def initialize(tag)
     @id = tag['id'].to_i if tag['id']
     @tag_type = tag['tag_type']
+  end
+
+  def transaction()
+    sql = "SELECT * FROM transactions WHERE tag_id =$1"
+    values = [@id]
+    transactions = SqlRunner.run(sql,values)
+    result = transactions.map { |transaction| Transaction.new(transaction)}
+    return result
   end
 
   def save

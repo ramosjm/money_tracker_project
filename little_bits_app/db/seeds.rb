@@ -72,10 +72,17 @@ transaction_4 = Transaction.new({
   'merchant_id' => merchant_4.id
   })
 
+transaction_5 =Transaction.new({
+  'amount' => 15.50,
+  'tag_id' => tag_1.id,
+  'merchant_id' => merchant_1.id
+  })
+
 transaction_1.save
 transaction_2.save
 transaction_3.save
 transaction_4.save
+transaction_5.save
 
 merchant_1.name = 'asda'
 merchant_1.update
