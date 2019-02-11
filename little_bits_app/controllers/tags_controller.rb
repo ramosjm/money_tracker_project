@@ -8,7 +8,9 @@ get '/tags/' do
   erb(:"tag/index")
 end
 
-get '/tags/:id' do
+get '/tags/:id/' do
+  @tag = Tag.find(params['id'])
+  @transactions = @tag.transaction
   erb(:"tag/show")
 end
 

@@ -1,7 +1,7 @@
 <h1>All Tags:</h1>
 
 <% @tags.each do |tag| %>
-  <p><%= tag.tag_type().capitalize %>
+  <p><a href="/tags/<%=tag.id%>/"><%= tag.tag_type().capitalize %></a>
     <form method="get" action="/tags/<%= tag.id %>/edit">
       <input type="submit" value="Edit Tag"/>
     </form>
