@@ -6,7 +6,7 @@
     <% end %>
   </select>
   <label for="amount-field">Amount:</label>
-  <input type="text" name="amount" id="amount-field" value="<%= @transaction.amount%>"/>
+  <input type="text" name="amount" id="amount-field" value="<%= sprintf("%.2f",@transaction.amount())%>"/>
   <label for="tag-field">Tag:</label>
   <select name="tag_id" id="tag-select">
     <% @tags.each do |tag| %>
