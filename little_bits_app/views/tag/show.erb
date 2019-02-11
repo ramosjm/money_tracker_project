@@ -1,4 +1,5 @@
 <h1><%=@tag.tag_type().capitalize%> </h1>
+<h3>Total Spent: £<%=sprintf("%.2f",@total)%></h3>
 
 <% @transactions.each do |transaction| %>
   <p><%= transaction.merchant.name.capitalize() %></p>

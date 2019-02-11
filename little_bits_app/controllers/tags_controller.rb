@@ -17,6 +17,8 @@ end
 get '/tags/:id/' do
   @tag = Tag.find(params[:id])
   @transactions = @tag.transaction
+  @total = 0.00
+  @transactions.each{|transaction|@total +=transaction.amount}
   erb(:"tag/show")
 end
 
@@ -40,9 +42,4 @@ post '/tags/:id/delete' do
   tag = Tag.find(params[:id])
   tag.delete
   redirect to '/tags/'
-end
-post '/tags/:id/transactions/:trans_id/delete' do
-  transaction = Transaction.find(params[:"trans_id"])
-  transaction.delete
-
 end
