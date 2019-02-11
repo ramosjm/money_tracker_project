@@ -14,6 +14,7 @@ attr_reader :id
     @merchant_id = transaction['merchant_id'].to_i
   end
 
+
   def merchant()
     sql = "SELECT * FROM merchants WHERE id =$1"
     values = [@merchant_id]
