@@ -8,12 +8,12 @@ get '/merchants/' do
   erb(:"merchant/index")
 end
 
-get '/merchants/:id/' do
-  erb(:"merchant/show")
-end
-
 get '/merchants/new' do
   erb(:"merchant/new")
+end
+
+get '/merchants/:id/' do
+  erb(:"merchant/show")
 end
 
 post '/merchants/new' do

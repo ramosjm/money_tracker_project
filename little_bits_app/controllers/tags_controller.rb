@@ -3,9 +3,14 @@ require( 'sinatra/contrib/all' )
 require_relative('../models/tag.rb')
 also_reload('../models/*')
 
+
 get '/tags/' do
   @tags = Tag.all
   erb(:"tag/index")
+end
+
+get '/tags/new/' do
+  erb(:"tag/new")
 end
 
 get '/tags/:id/' do
@@ -14,11 +19,7 @@ get '/tags/:id/' do
   erb(:"tag/show")
 end
 
-get '/tags/new/' do
-  erb(:"tag/new")
-end
-
-post '/tags/new' do
+post '/tags/new/' do
   @tag = Tag.new(params)
   @tag.save
   erb(:"tag/create")

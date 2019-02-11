@@ -1,11 +1,13 @@
 require_relative('../db/sql_runner.rb')
 require_relative('./transaction.rb')
+require('pry')
 
 class Tag
 attr_accessor :tag_type
 attr_reader :id
 
   def initialize(tag)
+    # binding.pry
     @id = tag['id'].to_i if tag['id']
     @tag_type = tag['tag_type']
   end

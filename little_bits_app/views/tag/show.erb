@@ -3,7 +3,7 @@
 <% @transactions.each do |transaction| %>
   <p><%= transaction.merchant.name.capitalize() %></p>
   <p>£<%= sprintf("%.2f",transaction.amount())%>
-    <form method="get" action="/tags/<%= @tag.id %>/edit">
+    <form method="get" action="/transactions/<%= transaction.id %>/edit">
       <input type="submit" value="Edit Transaction"/>
     </form>
   </p>
