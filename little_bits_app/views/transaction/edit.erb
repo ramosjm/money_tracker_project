@@ -1,16 +1,24 @@
 <form method="post" action="/transactions/<%=@transaction.id%>/edit">
   <label for="merchant-name">Merchant:</label>
-  <select name="merchant_id" id="merchant-select">
+  <select name="merchant_id" id="merchant-select" selected =" <%=@transaction.merchant_id%>">
     <% @merchants.each do |merchant| %>
-        <option value=<%= merchant.id %>><%= merchant.name.capitalize %></option>
+      <% if merchant.id == @transaction.merchant_id %>
+        <option value="<%=merchant.id %>" selected><%= merchant.name.capitalize %></option>
+      <% else %>
+        <option value="<%=merchant.id%>"><%= merchant.name.capitalize%></option>
+      <% end %>
     <% end %>
   </select>
   <label for="amount-field">Amount:</label>
   <input type="text" name="amount" id="amount-field" value="<%= sprintf("%.2f",@transaction.amount())%>"/>
   <label for="tag-field">Tag:</label>
-  <select name="tag_id" id="tag-select">
+  <select name="tag_id" id="tag-select" selected="<%=@transaction.tag_id%>">
     <% @tags.each do |tag| %>
-        <option value=<%= tag.id %>><%= tag.tag_type.capitalize %></option>
+        <% if tag.id == @transaction.tag_id %>
+          <option value="<%= tag.id %>"selected> <%= tag.tag_type.capitalize %> </option>
+        <% else %>
+          <option value="<%=tag.id %>"><%= tag.tag_type.capitalize %></option>
+        <%end%>
     <% end %>
   </select>
   <input type='submit' value="Edit Transaction">
