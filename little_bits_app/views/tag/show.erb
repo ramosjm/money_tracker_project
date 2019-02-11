@@ -1,10 +1,13 @@
-<h1><%=@tag.tag_type()%> </h1>
+<h1><%=@tag.tag_type().capitalize%> </h1>
 
 <% @transactions.each do |transaction| %>
   <p><%= transaction.merchant.name.capitalize() %></p>
   <p>£<%= sprintf("%.2f",transaction.amount())%>
     <form method="get" action="/transactions/<%= transaction.id %>/edit">
       <input type="submit" value="Edit Transaction"/>
+    </form>
+    <form method="post" action="transactions/<%= transaction.id %>/delete">
+      <input type="submit" value="Delete Transaction"/>
     </form>
   </p>
   <hr />

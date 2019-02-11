@@ -5,7 +5,7 @@
   <p>£<%= sprintf("%.2f",transaction.amount())%> <%= transaction.merchant.name.capitalize%></p>
   <p> <%=transaction.tag.tag_type.capitalize%></p>
   <p>
-    <form method="get" action="transactions/<%=transaction.id%>/edit">
+    <form method="get" action="/transactions/<%=transaction.id%>/edit">
       <input type="submit" value="Edit Transaction"/>
     </form>
     <form method="post" action="transactions/<%=transaction.id%>/delete">
