@@ -13,6 +13,8 @@ get '/merchants/new' do
 end
 
 get '/merchants/:id/' do
+  @merchant = Merchant.find(params['id'])
+  @transactions = @merchant.transaction
   erb(:"merchant/show")
 end
 
@@ -23,7 +25,7 @@ post '/merchants/new' do
 end
 
 get '/merchants/:id/edit' do
-  @merchant = Merchant.find(params[:id])
+  @merchant = Merchant.find(params['id'])
   erb(:"merchant/edit")
 end
 

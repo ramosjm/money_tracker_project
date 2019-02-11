@@ -15,7 +15,7 @@ get '/tags/new/' do
 end
 
 get '/tags/:id/' do
-  @tag = Tag.find(params['id'])
+  @tag = Tag.find(params[:id])
   @transactions = @tag.transaction
   erb(:"tag/show")
 end
