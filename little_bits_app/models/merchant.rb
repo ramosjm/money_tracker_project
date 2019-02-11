@@ -10,6 +10,14 @@ attr_reader :id
     @name = merchant['name']
   end
 
+  def transaction()
+    sql = "SELECT * FROM transactions WHERE merchant_id =$1"
+    values = [@id]
+    transactions = SqlRunner.run(sql,values)
+    result = transactions.map{|transaction|Transaction.new(transaction)}
+    return result
+  end
+
 
   def save()
     sql = "INSERT INTO merchants (name) VALUES ($1) RETURNING id"
