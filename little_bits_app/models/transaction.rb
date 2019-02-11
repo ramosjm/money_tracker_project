@@ -5,13 +5,14 @@ require_relative('./tag.rb')
 class Transaction
 
 attr_accessor :amount, :tag_id, :merchant_id
-attr_reader :id
+attr_reader :id, :date_added
 
   def initialize(transaction)
     @id = transaction['id'].to_i if transaction['id']
     @amount = transaction['amount'].to_f
     @tag_id = transaction['tag_id'].to_i
     @merchant_id = transaction['merchant_id'].to_i
+    @date_added = transaction['date_added'] if transaction['date_added']
   end
 
 
@@ -30,14 +31,16 @@ attr_reader :id
   end
 
   def save()
-    sql = "INSERT INTO transactions (amount, tag_id, merchant_id) VALUES ($1,$2,$3) RETURNING id"
+    sql = "INSERT INTO transactions (amount, tag_id, merchant_id) VALUES ($1,$2,$3) RETURNING id, date_added"
     values = [@amount,@tag_id, @merchant_id]
-    @id = SqlRunner.run(sql,values).first['id']
+    result = SqlRunner.run(sql,values).first
+    @id = result['id'].to_i
+    @date_added = result['date_added']
   end
 
   def update()
-    sql = "UPDATE transactions SET (amount, tag_id, merchant_id) = ($1,$2,$3) WHERE id =$4"
-    values = [@amount,@tag_id,@merchant_id,@id]
+    sql = "UPDATE transactions SET (amount, tag_id, merchant_id,date_added) = ($1,$2,$3,$4) WHERE id =$5"
+    values = [@amount,@tag_id,@merchant_id,@date_added,@id]
     SqlRunner.run(sql,values)
   end
 
@@ -66,7 +69,7 @@ attr_reader :id
     return Transaction.new(result)
   end
 
-  def self.total() #tested in PRY
+  def self.total()
     total = 0.00
     transactions = Transaction.all()
     transactions.each { |transaction| total += transaction.amount }
