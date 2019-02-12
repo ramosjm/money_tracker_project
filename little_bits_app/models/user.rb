@@ -40,5 +40,11 @@ class User
     return result
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM users WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql,values).first
+    return User.new(result)
+  end
 
 end
