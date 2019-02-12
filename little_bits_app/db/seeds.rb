@@ -83,7 +83,7 @@ transaction_5 =Transaction.new({
 user_1 = User.new({
   'first_name' => 'will',
   'last_name' => 'smith',
-  'budget' => 1320.40
+  'budget' => 1320.55
   })
 
 transaction_1.save
@@ -99,8 +99,10 @@ tag_2.update
 transaction_3.amount = 334.55
 transaction_3.update
 user_1.save
-user_1.first_name = 'steve'
+user_1.first_name = 'brian'
 user_1.update
+
+user_1.pretty_budget
 
 binding.pry
 nil

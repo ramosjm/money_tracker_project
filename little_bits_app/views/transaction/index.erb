@@ -1,6 +1,6 @@
 <h1>All Transactions:</h1>
 <h2>Total Spent: £<%=@total%></h2>
-<% @transactions.each do |transaction| %>
+<% @@transactions.each do |transaction| %>
   <p>Transaction:</p>
   <p>£<%= sprintf("%.2f",transaction.amount())%> <%= transaction.merchant.name.capitalize%></p>
   <p><%=transaction.tag.tag_type.capitalize%></p>

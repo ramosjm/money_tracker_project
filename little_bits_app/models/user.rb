@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner.rb')
+require('pry')
 
 class User
   attr_accessor :first_name, :last_name, :budget
@@ -8,6 +9,18 @@ class User
     @first_name = user['first_name']
     @last_name = user['last_name']
     @budget = user['budget']
+  end
+
+  def pretty_budget()
+
+    new_budget = @budget.to_s.reverse.gsub(/(\d+\.)?(\d{3})(?=\d)/, '\\1\\2,').reverse
+    if new_budget[-2] =='.'
+      result= new_budget +'0'
+    else
+      result= new_budget
+    end
+  return result
+
   end
 
   def full_name()

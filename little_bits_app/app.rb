@@ -11,7 +11,7 @@ require_relative('./models/merchant.rb')
 also_reload('./models/*')
 
 get '/' do
-  @transactions = Transaction.all()
+  @@transactions = Transaction.all()
   @total = Transaction.total()
   @@user = User.all.first()
   erb( :"transaction/index" )
