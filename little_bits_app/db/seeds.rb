@@ -1,6 +1,7 @@
-require_relative('../models/merchant')
-require_relative('../models/tag')
-require_relative('../models/transaction')
+require_relative('../models/merchant.rb')
+require_relative('../models/tag.rb')
+require_relative('../models/user.rb')
+require_relative('../models/transaction.rb')
 require('pry')
 
 Transaction.delete_all()
@@ -80,7 +81,7 @@ transaction_5 =Transaction.new({
 
 user_1 = User.new({
   'first_name' => 'will',
-  'last_name' => 'smith'
+  'last_name' => 'smith',
   'budget' => 1320.40
   })
 
@@ -96,6 +97,7 @@ tag_2.tag_type= 'travel'
 tag_2.update
 transaction_3.amount = 334.55
 transaction_3.update
+user_1.save
 
 binding.pry
 nil
