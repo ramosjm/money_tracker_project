@@ -16,4 +16,8 @@ class UserTest < MiniTest::Test
     assert_equal(User,@user_1.class)
   end
 
+  def test_first_name()
+    assert_equal('will',@user_1.first_name)
+  end
+
 end
