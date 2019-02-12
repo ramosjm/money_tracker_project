@@ -1,6 +1,7 @@
 DROP TABLE IF EXISTS transactions;
 DROP TABLE IF EXISTS merchants;
 DROP TABLE IF EXISTS tags;
+DROP TABLE IF EXISTS users;
 
 
 CREATE TABLE tags(
@@ -19,4 +20,11 @@ CREATE TABLE transactions(
   tag_id INT4 REFERENCES tags(id) ON DELETE CASCADE,
   merchant_id INT4 REFERENCES merchants(id) ON DELETE CASCADE,
   date_added TIMESTAMP DEFAULT NOW()
+);
+
+CREATE TABLE users(
+  id SERIAL4 PRIMARY KEY,
+  first_name VARCHAR(255),
+  last_name VARCHAR(255),
+  budget NUMERIC
 );

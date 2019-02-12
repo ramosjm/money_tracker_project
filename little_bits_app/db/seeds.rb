@@ -78,6 +78,12 @@ transaction_5 =Transaction.new({
   'merchant_id' => merchant_1.id
   })
 
+user_1 = User.new({
+  'first_name' => 'will',
+  'last_name' => 'smith'
+  'budget' => 1320.40
+  })
+
 transaction_1.save
 transaction_2.save
 transaction_3.save
