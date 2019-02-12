@@ -16,12 +16,16 @@ class UserTest < MiniTest::Test
     assert_equal(User,@user_1.class)
   end
 
-  def test_first_name()
+  def test_get_first_name()
     assert_equal('will',@user_1.first_name)
   end
 
-  def test_last_name()
+  def test_get_last_name()
     assert_equal('smith',@user_1.last_name)
+  end
+
+  def test_get_budget()
+    assert_equal(1320.40,@user_1.budget)
   end
 
 end
