@@ -14,12 +14,6 @@ get '/' do
   @@transactions = Transaction.all()
   @@total = Transaction.total()
   @@user = User.all.first()
-  remaining_budget = @@user.budget.to_f - @@total.to_f
-  @@remaining_budget = remaining_budget.to_s.reverse.gsub(/(\d+\.)?(\d{3})(?=\d)/, '\\1\\2,').reverse
-    if @@remaining_budget[-2] =='.'
-      @@remaining_budget= @@remaining_budget +'0'
-    else
-      @@remaining_budget= @@remaining_budget
-    end
+  @@remaining_budget = (@@user.budget.to_f.round(2) - @@total.to_f).round(2)
   erb( :"transaction/index" )
 end

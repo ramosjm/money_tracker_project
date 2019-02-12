@@ -18,7 +18,7 @@
     </nav>
     <section id = "content">
       <h3><%=@@user.full_name%></h3>
-      <p>Budget: <%=@@user.pretty_budget %></p>
+      <p>Budget: £<%=@@user.pretty_budget %></p>
       <p>Total Spent: £<%=@@total%></p>
       <p>Remaining Budget: £<%=@@remaining_budget%></p>
       <%= yield %>

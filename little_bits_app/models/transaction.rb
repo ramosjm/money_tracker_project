@@ -56,7 +56,7 @@ attr_reader :id, :date_added
   end
 
   def self.all()
-    sql = "SELECT * FROM transactions ORDER BY date_added"
+    sql = "SELECT * FROM transactions ORDER BY date_added DESC"
     transactions = SqlRunner.run(sql)
     result = transactions.map{|transaction|Transaction.new(transaction)}
     return result
@@ -76,9 +76,4 @@ attr_reader :id, :date_added
     return total.round(2)
   end
 
-  # def self.sort()
-  #   transactions= Transaction.all
-  #   result= transactions.sort_by{|transaction|transaction['id']}
-  #   return result
-  # end
 end
