@@ -17,6 +17,7 @@
       </ul>
     </nav>
     <section id = "content">
+      <p><%= @@user.full_name %> <p/>
       <p>Budget: <%=sprintf("%.2f",@@user.budget) %></p>
       <%= yield %>
     </section>

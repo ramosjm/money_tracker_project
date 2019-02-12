@@ -10,6 +10,10 @@ class User
     @budget = user['budget']
   end
 
+  def full_name()
+    return "#{@first_name.capitalize} #{@last_name.capitalize}"
+  end
+
   def save()
     sql = "INSERT INTO users (first_name,last_name,budget) VALUES ($1,$2,$3) RETURNING id"
     values = [@first_name,@last_name,@budget]
