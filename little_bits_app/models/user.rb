@@ -33,5 +33,12 @@ class User
     SqlRunner.run(sql)
   end
 
+  def self.all()
+    sql = "SELECT * FROM users ORDER BY first_name"
+    users = SqlRunner.run(sql)
+    result = users.map { |user|User.new(user)}
+    return result
+  end
+
 
 end
