@@ -12,7 +12,6 @@ class User
   end
 
   def pretty_budget()
-
     new_budget = @budget.to_s.reverse.gsub(/(\d+\.)?(\d{3})(?=\d)/, '\\1\\2,').reverse
     if new_budget[-2] =='.'
       result= new_budget +'0'
@@ -20,7 +19,6 @@ class User
       result= new_budget
     end
   return result
-
   end
 
   def full_name()

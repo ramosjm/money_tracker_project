@@ -76,13 +76,9 @@ attr_reader :id, :date_added
     return total.round(2)
   end
 
-
-
   # def self.sort()
   #   transactions= Transaction.all
   #   result= transactions.sort_by{|transaction|transaction['id']}
   #   return result
   # end
-
-
 end

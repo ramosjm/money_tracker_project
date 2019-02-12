@@ -7,6 +7,7 @@ also_reload('../models/*')
 
 get '/tags/' do
   @tags = Tag.all
+  @total = 0.00
   erb(:"tag/index")
 end
 
