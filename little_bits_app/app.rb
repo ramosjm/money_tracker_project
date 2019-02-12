@@ -13,7 +13,7 @@ also_reload('./models/*')
 get '/' do
   @transactions = Transaction.all()
   @total = Transaction.total()
-  @user = User.budget
+  @@user = User.all.first()
   erb( :"transaction/index" )
 
 end
