@@ -20,4 +20,8 @@ class UserTest < MiniTest::Test
     assert_equal('will',@user_1.first_name)
   end
 
+  def test_last_name()
+    assert_equal('smith',@user_1.last_name)
+  end
+
 end
