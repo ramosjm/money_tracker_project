@@ -2,6 +2,8 @@
 
 <% @merchants.each do |merchant| %>
   <p><a href="/merchants/<%=merchant.id%>/"><%= merchant.name().capitalize %></a> </p>
+  <%merchant.transaction.each{ |transaction|@total+=transaction.amount}%>
+  <h3>Total Spent: £<%=sprintf("%.2f",@total)%></h3>
   <form method="get" action="/merchants/<%=merchant.id%>/edit">
     <input type="submit" value="Edit Merchant">
   </form>
