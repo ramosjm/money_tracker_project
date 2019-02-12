@@ -5,10 +5,6 @@ require_relative('../models/tag.rb')
 require_relative('../models/merchant.rb')
 also_reload('../models/*')
 
-get '/transactions/:id' do
-  erb(:show)
-end
-
 get '/transactions/new/' do
   @merchants = Merchant.all
   @tags = Tag.all
