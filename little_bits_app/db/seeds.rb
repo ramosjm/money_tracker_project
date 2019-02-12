@@ -98,6 +98,8 @@ tag_2.update
 transaction_3.amount = 334.55
 transaction_3.update
 user_1.save
+user_1.first_name = 'steve'
+user_1.update
 
 binding.pry
 nil

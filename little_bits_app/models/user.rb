@@ -16,5 +16,11 @@ class User
     @id = SqlRunner.run(sql,values).first['id'].to_i
   end
 
+  def update()
+    sql = "UPDATE users SET (first_name,last_name,budget) = ($1,$2,$3) WHERE id = $4"
+    values = [@first_name,@last_name,@budget,@id]
+    SqlRunner.run(sql,values)
+  end
+
 
 end
