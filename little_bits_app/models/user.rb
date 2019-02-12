@@ -28,5 +28,10 @@ class User
     SqlRunner.run(sql,values)
   end
 
+  def self.delete_all()
+    sql = "DELETE FROM users"
+    SqlRunner.run(sql)
+  end
+
 
 end

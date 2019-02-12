@@ -7,6 +7,7 @@ require('pry')
 Transaction.delete_all()
 Tag.delete_all()
 Merchant.delete_all()
+User.delete_all()
 
 
 tag_1 = Tag.new({
