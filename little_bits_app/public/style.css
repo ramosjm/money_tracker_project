@@ -1,13 +1,22 @@
+body{
+
+}
+
 #wrapper{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows:auto auto auto auto auto;
   width: 100%;
   border: solid black;
 }
 header{
+  font-family: cursive;
+  font-weight: bold;
+  font-size: 14pt;
   background-color: blue;
-  grid-area: 1/1/2/3;
+  color: white;
+  grid-area: 1/1/2/5;
+  text-align: center;
 }
 
 nav {
@@ -27,7 +36,7 @@ nav ul li {
 #user_info {
   background-color: grey;
   color: red;
-  grid-area: 1/3/3/4;
+  grid-area: 2/4/3/5;
 
 }
 #content{
