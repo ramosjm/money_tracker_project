@@ -1,34 +1,35 @@
-body {
-  background-color: cyan;
-  color: red;
+#wrapper{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows:auto auto auto auto auto;
+  width: 100%;
+  border: solid black;
 }
-P {
-  color: red;
+header{
+  background-color: blue;
+  grid-area: 1/1/2/3;
 }
-h1 {
-  color: red;
-}
+
 nav {
+  grid-area: 2/1/3/3;
   padding: 0px;
   margin: 0px;
   padding-right: 20px;
-
-}
-.flex {
-  display: flex;
 }
 
-.flex--row {
-  flex-direction: row;
+nav ul li {
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  border-right: 2px solid black;
 }
-#user_info{
-  display: flex;
-  justify-content: flex-end;
+
+#user_info {
+  background-color: grey;
+  color: red;
+  grid-area: 1/3/3/4;
 
 }
-#content p{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+#content{
+  grid-area: 4/1/5/4;
   border: 5px solid red;
 }

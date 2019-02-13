@@ -6,7 +6,8 @@
     <link rel="stylesheet" type="text/css" href="/style.css">
   </head>
   <body>
-    <main class ="flex flex--row">
+    <div id ="wrapper">
+      <header>Lil' Bits</header>
       <nav>
         <ul>
           <li>
@@ -22,22 +23,22 @@
             <a href="/merchants/new">Add Merchant</a>
           </li>
           <li>
-            <a href="/tags/">Tags<a/>
+            <a href="/tags/">Tags</a>
             </li>
           <li>
-            <a href="/tags/new/">Add Tag<a/>
+            <a href="/tags/new/">Add Tag</a>
           </li>
         </ul>
       </nav>
-    <section id = "user_info">
-      <h3><%=@@user.full_name%></h3>
-      <p>Budget: £<%=@@user.pretty_budget %></p>
-      <p>Total Spent: £<%=@@total%></p>
-      <p>Remaining Budget: £<%=@@remaining_budget%></p>
-    </section>
-    <section id = "content">
-      <%= yield %>
-    </section>
-    </main>
+      <div id ="user_info">
+        <h3><%=@@user.full_name%></h3>
+        <p>Budget: £<%=@@user.pretty_budget %></p>
+        <p>Total Spent: £<%=@@total%></p>
+        <p>Remaining Budget: £<%=@@remaining_budget%></p>
+      </div>
+      <main id ="content">
+        <%= yield %>
+      </main>
+    </div>
   </body>
 </html>
