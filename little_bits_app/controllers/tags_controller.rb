@@ -11,7 +11,7 @@ get '/tags/' do
   erb(:"tag/index")
 end
 
-get '/tags/new/' do
+get '/tags/new' do
   erb(:"tag/new")
 end
 
@@ -22,7 +22,7 @@ get '/tags/:id/' do
   erb(:"tag/show")
 end
 
-post '/tags/new/' do
+post '/tags/new' do
   @tag = Tag.new(params)
   @tag.save
   erb(:"tag/create")

@@ -2,8 +2,7 @@
 
 <% @tags.each do |tag| %>
   <p><a href="/tags/<%=tag.id%>/"><%= tag.tag_type().capitalize %></a>
-  <%tag.transaction.each{|transaction|@total+=transaction.amount}%>
-    <h3>Total Spent: £<%=sprintf("%.2f",@total)%></h3>
+    <h3>Total Spent: £<%= sprintf("%.2f",tag.transaction_total(tag.transaction))%></h3>
     <form method="get" action="/tags/<%= tag.id %>/edit">
       <input type="submit" value="Edit Tag"/>
     </form>
