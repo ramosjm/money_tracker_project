@@ -76,4 +76,10 @@ attr_reader :id, :date_added
     return total.round(2)
   end
 
+  def self.total_transactions(transactions)
+    total = 0.00
+    transactions.each{ |transaction|total =+transaction.amount  }
+    return total
+  end
+
 end

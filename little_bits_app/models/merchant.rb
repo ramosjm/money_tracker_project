@@ -10,6 +10,12 @@ attr_reader :id
     @name = merchant['name']
   end
 
+  def total_transactions(transactions)
+    total = 0.00
+    transactions.each{|transaction|total+=transaction.amount}
+    return total
+  end
+
   def transaction()
     sql = "SELECT * FROM transactions WHERE merchant_id =$1"
     values = [@id]

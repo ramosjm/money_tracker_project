@@ -2,13 +2,12 @@
 
 <% @merchants.each do |merchant| %>
   <p><a href="/merchants/<%=merchant.id%>/"><%= merchant.name().capitalize %></a> </p>
-  <%merchant.transaction.each{ |transaction|@total+=transaction.amount}%>
-  <h3>Total Spent: £<%=sprintf("%.2f",@total)%></h3>
+  <h3>Total Spent: £<%=sprintf("%.2f",merchant.total_transactions(merchant.transaction))%></h3>
   <form method="get" action="/merchants/<%=merchant.id%>/edit">
     <input type="submit" value="Edit Merchant">
   </form>
   <form method="post" action="/merchants/<%=merchant.id%>/delete/">
     <input type="submit" value="Delete Merchant">
   </form>
-  <hr />
+  <hr/>
 <% end %>

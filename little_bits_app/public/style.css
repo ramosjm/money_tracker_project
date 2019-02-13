@@ -1,22 +1,27 @@
 body{
+  margin: 0px;
+  /* background-image: url("/pictures/giphy.gif"); */
 
 }
 
 #wrapper{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows:auto auto auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows:38px auto auto auto auto;
   width: 100%;
-  border: solid black;
+  margin: 0px;
 }
 header{
+  position: fixed;
+  width:inherit;
   font-family: cursive;
   font-weight: bold;
-  font-size: 14pt;
+  font-size: 18pt;
   background-color: blue;
   color: white;
   grid-area: 1/1/2/5;
   text-align: center;
+  z-index: 5;
 }
 
 nav {
@@ -24,7 +29,6 @@ nav {
   padding: 0px;
   margin: 0px;
   padding-right: 20px;
-  border-right: 2px solid black;
 }
 
 nav ul li {
@@ -34,12 +38,13 @@ nav ul li {
 }
 
 #user_info {
+  position: relative;
   background-color: grey;
   color: red;
-  grid-area: 2/4/3/5;
+  grid-area: 2/6/3/7;
 
 }
 #content{
-  grid-area: 4/1/5/4;
-  border: 5px solid red;
+  text-align: center;
+  grid-area: 2/2/5/6;
 }

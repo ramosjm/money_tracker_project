@@ -1,11 +1,11 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require_relative('../models/merchant.rb')
+require_relative('../models/transaction.rb')
 also_reload('../models/*')
 
 get '/merchants/' do
   @merchants = Merchant.all
-  @total = 0.00
   erb(:"merchant/index")
 end
 
@@ -16,8 +16,7 @@ end
 get '/merchants/:id/' do
   @merchant = Merchant.find(params['id'])
   @transactions = @merchant.transaction
-  @total = 0.00
-  @transactions.each{ |transaction|@total =+transaction.amount  }
+  @total = Transaction.total_transactions(@transactions)
   erb(:"merchant/show")
 end
 

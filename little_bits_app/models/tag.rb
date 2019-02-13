@@ -19,9 +19,9 @@ attr_reader :id
     return result
   end
 
-  def transaction_total(id)
+  def transaction_total(transactions)
     total =0.00
-    transactions.each{|transaction|total +=transaction.transaction.amount}
+    transactions.each{|transaction|total +=transaction.amount}
     return total
   end
 

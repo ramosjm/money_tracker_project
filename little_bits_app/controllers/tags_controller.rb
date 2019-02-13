@@ -18,8 +18,7 @@ end
 get '/tags/:id/' do
   @tag = Tag.find(params[:id])
   @transactions = @tag.transaction
-  @total = 0.00
-  @transactions.each{|transaction|@total +=transaction.amount}
+  @total = @tag.transaction_total(@tag.transaction)
   erb(:"tag/show")
 end
 
