@@ -3,6 +3,7 @@ require('pry')
 
 class User
   attr_accessor :first_name, :last_name, :budget
+  attr_reader :id
 
   def initialize(user)
     @id = user['id'].to_i if user['id']
