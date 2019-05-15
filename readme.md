@@ -4,6 +4,11 @@ My take on a spending tracker ruby app.
 
 In order to run this you will need to create a database called 'tracker' and run the seeds.rb file located in the db directory.
 
+Once that is done, run the app.rb file with the following terminal commard:
+Ruby app.rb
+
+The site will be accessible on http://localhost:4567/
+
 That's all:
 
 # Project - Web Programming with Ruby
