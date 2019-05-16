@@ -54,5 +54,6 @@ nav ul li {
   grid-area: 2/2/5/6;
   border-left:solid black;
   border-right: solid black;
+  font-weight: bold;
   color: black;
 }

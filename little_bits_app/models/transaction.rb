@@ -55,6 +55,11 @@ attr_reader :id, :date_added
     SqlRunner.run(sql)
   end
 
+  def self.reverse_order()
+    self.all.reverse()
+
+  end
+
   def self.all()
     sql = "SELECT * FROM transactions ORDER BY date_added DESC"
     transactions = SqlRunner.run(sql)

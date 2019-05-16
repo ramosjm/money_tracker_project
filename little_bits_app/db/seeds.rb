@@ -86,6 +86,18 @@ user_1 = User.new({
   'budget' => 1320.55
   })
 
+user_2 = User.new({
+  'first_name' => 'david',
+  'last_name' => 'wells',
+  'budget' => 2000.34
+  })
+
+user_3 = User.new({
+  'first_name' => 'karen',
+  'last_name' => 'anderson',
+  'budget' => 1123.56
+  })
+
 transaction_1.save
 transaction_2.save
 transaction_3.save
